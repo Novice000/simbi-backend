@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc --build",
+    "build:prod": "tsc --build && mkdir -p dist/prisma  && cp src/prisma/schema.prisma ./dist/prisma/",
     "dev": "nodemon src/server.ts",
     "start": "node dist/server.js",
     "migrate:dev": "npx prisma migrate dev --schema src/prisma/schema.prisma --name migration",
